@@ -1,0 +1,31 @@
+
+<div class="container-fluid mancala-main-container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm-12 col-md-12 mt-5">
+        <div class="mancala-sub-container">
+          <h1>Mancala Game</h1>
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <b>First Player </b> 
+            <p [ngClass]="{ 'has-error': isSubmitted && f['firstPlayer'].errors }">
+                <input type="text" class="form-control" id="firstPlayer" placeholder="Player Name" name="firstPlayer"
+                    formControlName="firstPlayer">
+                <span *ngIf="f['firstPlayer'].touched && f['firstPlayer'].invalid" class="help-block error">
+                <span *ngIf="f['firstPlayer'].errors && f['firstPlayer'].errors['required']">Player 1 name is required.
+                </span>
+              </span>
+            </p>
+            <b>Second Player </b> 
+            <p [ngClass]="{ 'has-error': isSubmitted && f['secondPlayer'].errors }">
+                <input type="text" class="form-control" id="secondPlayer" placeholder="Player Name" name="secondPlayer"
+                    formControlName="secondPlayer">
+                <span *ngIf="f['secondPlayer'].touched && f['secondPlayer'].invalid" class="help-block error">
+                <span *ngIf="f['secondPlayer'].errors && f['secondPlayer'].errors['required']">Player 2 name is required.
+                </span>
+              </span>
+            </p>
+                <input  class="login-btn text-center" type="submit" value="Start"  [disabled]="!form.valid"  >
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
