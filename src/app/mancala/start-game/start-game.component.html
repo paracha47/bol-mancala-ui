@@ -35,28 +35,18 @@
 		</div>
 	</div>
 
-	<p class="status" >Player Turn
-		<span class="current-player">{{playerTurn}}</span>
-	</p>
-	<p class="status">Player Name
-		<span class="current-player">{{playerName}}</span>
-	</p>
 
-	<div *ngIf="winnerName != ''">
-			<p class="status">Winner :
-					<span class="current-player">{{winnerName}} is the game winner</span>
-				</p>
-			
-				<p class="status">Score
-					<span class="current-player">{{winnerScore}}</span>
-				</p>
-			
-				<p class="status">Comments
-					<span class="current-player">{{winnerMessage}}</span>
-				</p>
+
+	<div *ngIf="!isGameOver">
+			<h3 class="current-player">Player Turn : {{playerTurn}}</h3>
+			<h3 class="current-player">Player Name : {{playerName}}</h3>
+		</div>
+
+	<div *ngIf="isGameOver">
+		<h3 class="current-player">Winner Name: {{winnerName}}</h3>
+		<h3 class="current-player">Score : {{winnerScore}}</h3>
+		<h3 class="current-player">Comments : {{winnerMessage}}</h3>
 	</div>
-	
-
 </body>
 
 </html>

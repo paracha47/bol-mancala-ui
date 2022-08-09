@@ -158,3 +158,29 @@ button:hover {
     background: #fafafa;
     color: #23282d
 }
+h1{
+    color:#353738;
+    margin-top: 0;
+    font-family: 'Neotech','GE SS Two','Roboto',Arial,sans-serif;
+    font-size: 35px;
+    overflow: hidden;
+    text-align: center;
+  }
+  h1:before,
+  h1:after{
+    background-color: #c4d16e;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+  }
+  h1:before {
+    right: 20px;
+    margin-left: -50%;
+  }
+  h1:after {
+    left: 20px;
+    margin-right: -50%;
+  }
