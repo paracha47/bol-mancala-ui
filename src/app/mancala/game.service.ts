@@ -36,7 +36,7 @@ export class GameService {
   }
 
   sow(gameId:string, pitIndex:number): Observable<any> {
-    return this.httpClient.post(this.apiURL + '/' + gameId + "/sow?pitIndex=" + pitIndex, this.httpOptions)
+    return this.httpClient.post(this.apiURL + '/' + gameId + "/pits/" + pitIndex, this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )

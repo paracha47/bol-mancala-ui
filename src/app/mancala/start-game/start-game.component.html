@@ -1,25 +1,62 @@
-<div class="col-sm-12 col-md-12 mt-5">
-        <div class="divTable" style="border: 1px solid #000;">
-                <div class="divTableBody">
-                <div class="divTableRow">
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                </div>
-                <div class="divTableRow">
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                <div class="divTableCell">&nbsp;</div>
-                </div>
-                </div>
-                </div>
-</div>
+<!DOCTYPE html>
+<html>
 
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body data-player="one">
+	<h1>Mancala</h1>
+
+	<div class="board">
+		<div class="player-two store">{{secondPlayerBigPit}}<p></p>
+		</div>
+
+		<div class="rows">
+			<div class="row player-two">
+
+				<div *ngFor="let pit of pits | slice:7:13; let i = index" (click)="sow(i+7, 'PLAYER_B')" class="pit">
+					<p>{{pit.stones}}</p>
+
+				</div>
+			</div>
+
+			<div class="row player-one">
+
+				<div *ngFor="let pit of pits | slice:0:6; let i = index" (click)="sow(i, 'PLAYER_A')" class="pit">
+					<p>{{pit.stones}}</p>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="player-one store">
+			<p>{{firstPlayerBigPit}}</p>
+		</div>
+	</div>
+
+	<p class="status" >Player Turn
+		<span class="current-player">{{playerTurn}}</span>
+	</p>
+	<p class="status">Player Name
+		<span class="current-player">{{playerName}}</span>
+	</p>
+
+	<div *ngIf="winnerName != ''">
+			<p class="status">Winner :
+					<span class="current-player">{{winnerName}} is the game winner</span>
+				</p>
+			
+				<p class="status">Score
+					<span class="current-player">{{winnerScore}}</span>
+				</p>
+			
+				<p class="status">Comments
+					<span class="current-player">{{winnerMessage}}</span>
+				</p>
+	</div>
+	
+
+</body>
+
+</html>
