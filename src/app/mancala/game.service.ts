@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class GameService {
 
-  private apiURL = "http://localhost:8080/mancala";
+  private apiURL = "http://34.118.108.4:8080/mancala";
 
   httpOptions = {
     headers: new HttpHeaders({
